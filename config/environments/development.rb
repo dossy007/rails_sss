@@ -38,4 +38,18 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host:'rails-sss-dossy007.c9users.io',port:8080 }
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "test08669@gmail.com", #ご自身のgmailアドレス
+    :password => "sjrarfjknnkmwpbw", #gmailアドレスの固有パスワード
+    :authentication => 'login'
+  }
+  
 end
